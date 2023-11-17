@@ -1,7 +1,5 @@
 const express = require('express');
 const mysql = require('mysql');
-const { Configuration, OpenAIApi } = require("openai"); 
-const readlineSync = require("readline-sync"); 
 require("dotenv").config(); 
 
 const app = express();
@@ -10,7 +8,7 @@ const port = 3000;
 const db = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
-  password: "20200291",
+  password: process.env.MYSQL_PW,
   database: "TaLog"
 });
 
